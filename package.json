@@ -1,0 +1,71 @@
+{
+  "name": "angular-generator",
+  "displayName": "Angular-Generator",
+  "description": "The extension allows Angular CLI to generate schematics",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "angular-generator.generateComponent",
+        "title": "Generate Component"
+      },
+      {
+        "command": "angular-generator.generateService",
+        "title": "Generate Service"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "angular-generator.submenu",
+        "label": "Angular Generator (CLI)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "submenu": "angular-generator.submenu",
+          "when": "explorerResourceIsFolder",
+          "group": "z_commands"
+        }
+      ],
+      "angular-generator.submenu": [
+        {
+          "command": "angular-generator.generateComponent"
+        },
+        {
+          "command": "angular-generator.generateService"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/lodash.camelcase": "^4.3.9",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.99.0",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.23.0",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "lodash.camelcase": "^4.3.0"
+  }
+}
