@@ -5,12 +5,12 @@ import { getDefaultAngularPath } from './getAngularConfigs';
 import { GenerationTypes } from '../models/generationTypes';
 
 export async function getPathToGenerate(type: GenerationTypes, uriPath: string) {
-    const name = await promptText();
+    const name = await promptText(`Please provide a name for the ${type}. Use / to create a nested structure`, '');
     if (!name) {
         window.showErrorMessage(`Please provide a name for the ${type} and try again`);
         return;
     }
-    const camelcaseStr = camelCase(name);
+    const camelcaseStr = name.split('/').map((name) => camelCase(name.trim())).join('/');
     const path = await getDefaultAngularPath();
     if (!path) {
         return;
