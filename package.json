@@ -44,6 +44,9 @@
         }
       ]
     }
+  },"repository": {
+    "type": "git",
+    "url": "git://github.com/the-vv/VS-Code-Angular-generator-Extension.git"
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
