@@ -1,71 +1,35 @@
-# angular-generator README
+# Angular Generator
 
-This is the README for your extension "angular-generator". After writing up a brief description, we recommend including the following sections.
+The **Angular Generator** extension allows you to quickly generate Angular components and services directly from the VS Code interface using the Angular CLI.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Generate Component**: Create a new Angular component in the desired folder.
+- **Generate Service**: Create a new Angular service in the desired folder.
 
-For example if there is an image subfolder under your extension project workspace:
+## How to Use
 
-\!\[feature X\]\(images/feature-x.png\)
+1. **Install the Extension**: Install the Angular Generator extension from the VS Code marketplace.
+2. **Open a Workspace**: Open your Angular project in VS Code.
+3. **Right-Click on a Folder**:
+   - Right-click on a folder in the Explorer view.
+   - Select **Angular Generator (CLI)** from the context menu.
+4. **Choose an Option**:
+   - Select **Generate Component** to create a new component.
+   - Select **Generate Service** to create a new service.
+5. **Provide a Name**:
+   - Enter the name for the component or service when prompted.
+6. **Done**:
+   - The extension will generate the component or service in the selected folder.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Upcoming Features
 
-## Requirements
+- Generate Angular **Directives**.
+- Generate Angular **Pipes**.
+- And more!
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Stay tuned for updates!
 
-## Extension Settings
+## Feedback and Contributions
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Feel free to report issues or suggest features via the [GitHub repository](https://github.com/the-vv/VS-Code-Angular-generator-Extension). Contributions are welcome!
