@@ -1,8 +1,9 @@
 {
   "name": "angular-generator",
-  "displayName": "Angular Generator",
+  "displayName": "Angular Generator (CLI)",
   "description": "The extension allows Angular CLI to generate schematics",
   "version": "0.0.1",
+  "publisher": "VishnuVinod",
   "engines": {
     "vscode": "^1.99.0"
   },
@@ -10,6 +11,7 @@
     "Other"
   ],
   "main": "./out/extension.js",
+  "icon": "assets/angular-generator.png",
   "contributes": {
     "commands": [
       {
@@ -44,7 +46,8 @@
         }
       ]
     }
-  },"repository": {
+  },
+  "repository": {
     "type": "git",
     "url": "git://github.com/the-vv/VS-Code-Angular-generator-Extension.git"
   },
