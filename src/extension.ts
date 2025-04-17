@@ -4,7 +4,6 @@ import { GenerationTypes } from './models/generationTypes';
 import { runInTerminal } from './utils/runInTerminal';
 
 export function activate(context: ExtensionContext) {
-	console.log('Congratulations, your extension "angular-generator" is now active!');
 	const disposable = commands.registerCommand('angular-generator.generateComponent', async (uri) => {
 		const pathToGenerate = await getPathToGenerate(GenerationTypes.Component, uri.fsPath);
 		if (!pathToGenerate) {
@@ -32,5 +31,4 @@ export function activate(context: ExtensionContext) {
 
 // This method is called when your extension is deactivated
 export function deactivate() {
-	console.log('Extension "angular-generator" is now deactivated!');
 }
