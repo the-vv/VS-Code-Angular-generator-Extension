@@ -2,7 +2,7 @@
   "name": "angular-generator",
   "displayName": "Angular Generator (CLI)",
   "description": "The extension allows Angular CLI to generate schematics",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "publisher": "VishnuVinod",
   "engines": {
     "vscode": "^1.99.0"
