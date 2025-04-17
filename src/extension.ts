@@ -1,33 +1,36 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import { commands, ExtensionContext, window } from 'vscode';
 import { getPathToGenerate } from './utils/getPathToGenerate';
 import { GenerationTypes } from './models/generationTypes';
+import { runInTerminal } from './utils/runInTerminal';
 
 export function activate(context: ExtensionContext) {
+	console.log('Congratulations, your extension "angular-generator" is now active!');
 	const disposable = commands.registerCommand('angular-generator.generateComponent', async (uri) => {
 		const pathToGenerate = await getPathToGenerate(GenerationTypes.Component, uri.fsPath);
 		if (!pathToGenerate) {
 			return;
 		}
-		const terminal = window.createTerminal(); // No name, no show
-		terminal.sendText('ng generate component ' + pathToGenerate);
-		window.showInformationMessage('Generated component at: ' + pathToGenerate);
+		const command = `ng generate component ${pathToGenerate}`;
+		runInTerminal(command).then(() => {
+			window.showInformationMessage('Ran command: ' + command);
+		});
 	});
 	const disposableService = commands.registerCommand('angular-generator.generateService', async (uri) => {
 		const pathToGenerate = await getPathToGenerate(GenerationTypes.Service, uri.fsPath);
 		if (!pathToGenerate) {
 			return;
 		}
-		const terminal = window.createTerminal(); // No name, no show
-		terminal.sendText('ng generate service ' + pathToGenerate);
-		window.showInformationMessage('Generated service at: ' + pathToGenerate);
+		const command = `ng generate service ${pathToGenerate}`;
+		runInTerminal(command).then(() => {
+			window.showInformationMessage('Ran command: ' + command);
+		});
 	});
-
 
 	context.subscriptions.push(disposable);
 	context.subscriptions.push(disposableService);
 }
 
 // This method is called when your extension is deactivated
-export function deactivate() { }
+export function deactivate() {
+	console.log('Extension "angular-generator" is now deactivated!');
+}
