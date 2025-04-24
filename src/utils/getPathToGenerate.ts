@@ -31,5 +31,5 @@ export async function getPathToGenerate(type: GenerationTypes, uriPath: string) 
         return;
     }
     const pathToGenerate = `${correctedPath}/${camelcaseStr}`;
-    return pathToGenerate;
+    return { pathToGenerate, projectName: path.projectNameToUse };
 }
