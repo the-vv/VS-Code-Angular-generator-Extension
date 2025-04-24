@@ -137,5 +137,17 @@
   },
   "dependencies": {
     "lodash.camelcase": "^4.3.0"
-  }
+  },
+  "keywords": [
+    "Angular",
+    "CLI",
+    "Generator",
+    "Schematics",
+    "Angular CLI",
+    "Code Generation",
+    "VS Code Extension",
+    "Angular Schematics",
+    "Angular CLI Schematics",
+    "Angular Code Generation"
+  ]
 }
