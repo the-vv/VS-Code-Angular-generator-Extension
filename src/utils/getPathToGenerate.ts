@@ -16,15 +16,7 @@ export async function getPathToGenerate(type: GenerationTypes, uriPath: string) 
         return;
     }
     const userChosenPath: string = uriPath;
-    let pathToUse = '';
-    if (type === GenerationTypes.Component) {
-        pathToUse = path.componentPath;
-    } else if (type === GenerationTypes.Service) {
-        pathToUse = path.servicePath;
-    } else {
-        window.showErrorMessage(`Error: Invalid type value`);
-        return;
-    }
+    let pathToUse = path.paths[type];
     const correctedPath = userChosenPath.split(`${pathToUse}/`)[1];
     if (!correctedPath) {
         window.showErrorMessage(`Please select a folder inside the configured ${type} path`);

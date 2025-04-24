@@ -1,6 +1,7 @@
 import path from "path";
 import * as fs from 'fs';
 import { workspace, window, WorkspaceFolder } from "vscode";
+import { GenerationTypes } from '../models/generationTypes';
 
 export async function getDefaultAngularPath() {
     let selectedWorkspaceFolder: WorkspaceFolder | undefined = undefined;
@@ -49,14 +50,43 @@ export async function getDefaultAngularPath() {
                     const schematics = projects[projectNameToUse].schematics;
                     const componentConfig = schematics['@schematics/angular:component'];
                     const serviceConfig = schematics['@schematics/angular:service'];
+                    const directiveConfig = schematics['@schematics/angular:directive'];
+                    const pipeConfig = schematics['@schematics/angular:pipe'];
+                    const guardConfig = schematics['@schematics/angular:guard'];
+                    const classConfig = schematics['@schematics/angular:class'];
+                    const interfaceConfig = schematics['@schematics/angular:interface'];
+                    const enumConfig = schematics['@schematics/angular:enum'];
+                    const moduleConfig = schematics['@schematics/angular:module'];
+                    const interceptorConfig = schematics['@schematics/angular:interceptor'];
+                    const resolverConfig = schematics['@schematics/angular:resolver'];
 
                     const componentPath: string = componentConfig?.path || 'src/app'; // default path
                     const servicePath: string = serviceConfig?.path || 'src/app'; // default path
+                    const directivePath: string = directiveConfig?.path || 'src/app'; // default path
+                    const pipePath: string = pipeConfig?.path || 'src/app'; // default path
+                    const guardPath: string = guardConfig?.path || 'src/app'; // default path
+                    const classPath: string = classConfig?.path || 'src/app'; // default path
+                    const interfacePath: string = interfaceConfig?.path || 'src/app'; // default path
+                    const enumPath: string = enumConfig?.path || 'src/app'; // default path
+                    const modulePath: string = moduleConfig?.path || 'src/app'; // default path
+                    const interceptorPath: string = interceptorConfig?.path || 'src/app'; // default path
+                    const resolverPath: string = resolverConfig?.path || 'src/app'; // default path
 
                     return {
-                        componentPath,
-                        servicePath,
                         projectNameToUse,
+                        paths: {
+                            [GenerationTypes.Component]: componentPath,
+                            [GenerationTypes.Service]: servicePath,
+                            [GenerationTypes.Directive]: directivePath,
+                            [GenerationTypes.Pipe]: pipePath,
+                            [GenerationTypes.Guard]: guardPath,
+                            [GenerationTypes.Class]: classPath,
+                            [GenerationTypes.Interface]: interfacePath,
+                            [GenerationTypes.Enum]: enumPath,
+                            [GenerationTypes.Module]: modulePath,
+                            [GenerationTypes.Interceptor]: interceptorPath,
+                            [GenerationTypes.Resolver]: resolverPath
+                        }
                     };
                 }
 

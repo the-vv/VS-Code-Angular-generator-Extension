@@ -21,6 +21,42 @@
       {
         "command": "angular-generator.generateService",
         "title": "Generate Service"
+      },
+      {
+        "command": "angular-generator.generateDirective",
+        "title": "Generate Directive"
+      },
+      {
+        "command": "angular-generator.generatePipe",
+        "title": "Generate Pipe"
+      },
+      {
+        "command": "angular-generator.generateGuard",
+        "title": "Generate Guard"
+      },
+      {
+        "command": "angular-generator.generateInterceptor",
+        "title": "Generate Interceptor"
+      },
+      {
+        "command": "angular-generator.generateModule",
+        "title": "Generate Module"
+      },
+      {
+        "command": "angular-generator.generateResolver",
+        "title": "Generate Resolver"
+      },
+      {
+        "command": "angular-generator.generateClass",
+        "title": "Generate Class"
+      },
+      {
+        "command": "angular-generator.generateEnum",
+        "title": "Generate Enum"
+      },
+      {
+        "command": "angular-generator.generateInterface",
+        "title": "Generate Interface"
       }
     ],
     "submenus": [
@@ -43,6 +79,33 @@
         },
         {
           "command": "angular-generator.generateService"
+        },
+        {
+          "command": "angular-generator.generateDirective"
+        },
+        {
+          "command": "angular-generator.generatePipe"
+        },
+        {
+          "command": "angular-generator.generateGuard"
+        },
+        {
+          "command": "angular-generator.generateInterceptor"
+        },
+        {
+          "command": "angular-generator.generateModule"
+        },
+        {
+          "command": "angular-generator.generateResolver"
+        },
+        {
+          "command": "angular-generator.generateClass"
+        },
+        {
+          "command": "angular-generator.generateEnum"
+        },
+        {
+          "command": "angular-generator.generateInterface"
         }
       ]
     }

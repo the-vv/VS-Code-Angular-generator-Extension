@@ -9,6 +9,5 @@ export enum GenerationTypes {
     Resolver = 'resolver',
     Class = 'class',
     Enum = 'enum',
-    Interface = 'interface',
-    Type = 'type',
+    Interface = 'interface'
 }
