@@ -1,11 +1,20 @@
 # Angular Generator
 
-The **Angular Generator** extension allows you to quickly generate Angular components and services directly from the VS Code interface using the Angular CLI.
+The **Angular Generator** extension allows you to quickly generate Angular components, services, and other Angular artifacts directly from the VS Code interface using the Angular CLI.
 
 ## Features
 
 - **Generate Component**: Create a new Angular component in the desired folder.
 - **Generate Service**: Create a new Angular service in the desired folder.
+- **Generate Directive**: Create a new Angular directive.
+- **Generate Pipe**: Create a new Angular pipe.
+- **Generate Guard**: Create a new Angular route guard.
+- **Generate Interceptor**: Create a new Angular HTTP interceptor.
+- **Generate Module**: Create a new Angular module.
+- **Generate Resolver**: Create a new Angular resolver.
+- **Generate Class**: Create a new TypeScript class.
+- **Generate Enum**: Create a new TypeScript enum.
+- **Generate Interface**: Create a new TypeScript interface.
 
 ## How to Use
 
@@ -15,20 +24,15 @@ The **Angular Generator** extension allows you to quickly generate Angular compo
    - Right-click on a folder in the Explorer view.
    - Select **Angular Generator (CLI)** from the context menu.
 4. **Choose an Option**:
-   - Select **Generate Component** to create a new component.
-   - Select **Generate Service** to create a new service.
+   - Select the desired type (e.g., Component, Service, Directive, etc.) to generate.
 5. **Provide a Name**:
-   - Enter the name for the component or service when prompted.
+   - Enter the name for the selected type when prompted.
 6. **Done**:
-   - The extension will generate the component or service in the selected folder.
+   - The extension will generate the selected type in the specified folder.
 
 ## Upcoming Features
 
-- Generate Angular **Directives**.
-- Generate Angular **Pipes**.
-- And more!
-
-Stay tuned for updates!
+More features will be added soon! Stay tuned for updates!
 
 ## Feedback and Contributions
 
