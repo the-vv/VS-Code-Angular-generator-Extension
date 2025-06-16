@@ -17,7 +17,11 @@ export async function getPathToGenerate(type: GenerationTypes, uriPath: string) 
     }
     const userChosenPath: string = uriPath;
     let pathToUse = path.paths[type];
-    const correctedPath = userChosenPath.split(`${pathToUse}/`)[1];
+    let splitPath = `${pathToUse}/`;
+    if (process.platform === 'win32') {
+        splitPath = splitPath.replace(/\\/g, '/'); // Normalize path for Windows
+    }
+    const correctedPath = userChosenPath.split(splitPath)[1];
     if (!correctedPath) {
         window.showErrorMessage(`Please select a folder inside the configured ${type} path`);
         return;
