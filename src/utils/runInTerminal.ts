@@ -1,14 +1,26 @@
-import { window, env } from "vscode";
+import { Task, TaskScope, ShellExecution, TaskRevealKind, tasks } from "vscode";
 
-export function runInTerminal(command: string, name: string = "Angular Generator (CLI)"): Promise<boolean> {
+export function runInTerminal(command: string): Promise<boolean> {
     return new Promise<boolean>((resolve, reject) => {
-        const terminal = window.createTerminal(name); // Use name if provided
-        terminal.show(); // Show the terminal
-        const shell = env.shell; // Get the user's default shell
+        const task = new Task(
+            { type: 'shell' },
+            TaskScope.Workspace,
+            'Angular Generator (CLI)',
+            'ng',
+            new ShellExecution(command)
+        );
+        task.presentationOptions = {
+            echo: true,
+            reveal: TaskRevealKind.Silent,
+            close: true,
+            clear: true,
+            showReuseMessage: false,
+            focus: true,
+        };
 
-        // Adjust the command based on the shell
-        const exitCommand = shell.includes("cmd.exe") ? "& exit" : "&& exit";
-        terminal.sendText(`${command} ${exitCommand}`); // Send command and exit
-        resolve(true);
+        tasks.executeTask(task).then(() => {
+            resolve(true);
+        });
+
     });
 }

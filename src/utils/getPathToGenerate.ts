@@ -15,11 +15,11 @@ export async function getPathToGenerate(type: GenerationTypes, uriPath: string) 
     if (!path) {
         return;
     }
-    const userChosenPath: string = uriPath;
-    let pathToUse = path.paths[type];
-    let splitPath = `${pathToUse}/`;
+    let userChosenPath: string = uriPath;
+    const pathToUse = path.paths[type];
+    const splitPath = `${pathToUse}/`;
     if (process.platform === 'win32') {
-        splitPath = splitPath.replace(/\\/g, '/'); // Normalize path for Windows
+        userChosenPath = userChosenPath.replace(/\\/g, '/'); // Normalize path for Windows
     }
     const correctedPath = userChosenPath.split(splitPath)[1];
     if (!correctedPath) {
