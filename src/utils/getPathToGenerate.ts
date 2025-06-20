@@ -22,10 +22,11 @@ export async function getPathToGenerate(type: GenerationTypes, uriPath: string) 
         userChosenPath = userChosenPath.replace(/\\/g, '/'); // Normalize path for Windows
     }
     const correctedPath = userChosenPath.split(splitPath)[1];
-    if (!correctedPath) {
-        window.showErrorMessage(`Please select a folder inside the configured ${type} path`);
+    const isRootPath = userChosenPath.split('/').join('').endsWith(splitPath.split('/').join(''));
+    if (!correctedPath && !isRootPath) {
+        window.showErrorMessage(`Please select a folder inside the configured or default ${type} entry point`);
         return;
     }
-    const pathToGenerate = `${correctedPath}/${camelcaseStr}`;
+    const pathToGenerate = correctedPath ? `${correctedPath}/${camelcaseStr}` : `${camelcaseStr}`;
     return { pathToGenerate, projectName: path.projectNameToUse };
 }
