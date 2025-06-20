@@ -1,9 +1,19 @@
 # Change Log
 
-All notable changes to the "angular-generator" extension will be documented in this file.
+## [1.0.3] - 2025-06-21
+### Fixed
+- Windows terminal issues by moving execution to tasks instead of terminal
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+## [Initial Release]
+### Added
+- **Generate Component**
+- **Generate Service**
+- **Generate Directive**
+- **Generate Pipe**
+- **Generate Guard**
+- **Generate Interceptor**
+- **Generate Module**
+- **Generate Resolver**
+- **Generate Class**
+- **Generate Enum**
+- **Generate Interface**
